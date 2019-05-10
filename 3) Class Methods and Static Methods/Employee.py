@@ -1,6 +1,8 @@
 import datetime
 
+
 class Employee:
+
     raise_amount = 1.04
     num_of_employee = 0;
 
