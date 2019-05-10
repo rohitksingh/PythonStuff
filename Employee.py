@@ -7,6 +7,11 @@ class Employee:
         self.email = first + "." + last + "@mycompany.com"
 
 
+    def fullname(self):
+        return "{} {}".format(self.first, self.last)
+
+
 emp1 = Employee('Rohit', 'Singh', 10000)
-print(emp1.email)
+print("Full name: "+emp1.fullname())
+
 
