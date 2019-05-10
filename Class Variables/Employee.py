@@ -1,20 +1,25 @@
 class Employee:
 
     raise_amount = 1.04
+    num_of_employee = 0;
 
     def __init__(self, first, last, pay):
         self.first = first
         self.last = last
         self.pay = pay
         self.email = first + "." + last + "@mycompany.com"
+        Employee.num_of_employee += 1
 
     def fullname(self):
         print(self.first+" "+self.last)
 
     def apply_raise(self):
-        #elf.pay = int(self.pay * self.raise_amount)
-        #self.pay = int(self.pay * Employee.raise_amount)  # This does not give ability to change for every instance
+        self.pay = int(self.pay * self.raise_amount)
+        # self.pay = int(self.pay * Employee.raise_amount)
+        # This does not give ability to change for every instance
 
+
+print("Initially num of empolyee: {}".format(Employee.num_of_employee))
 
 emp1 = Employee('Rohit', 'Singh', 10000)
 emp2 = Employee('Jon', 'Snow', 10)
@@ -40,5 +45,7 @@ emp3.raise_amount = 1.06
 emp3.apply_raise()
 print(emp3.pay)
 
+# print("Now  num of empolyee: " + Employee.num_of_employee)
 
+print("Now  num of empolyee: {}".format(Employee.num_of_employee))
 
