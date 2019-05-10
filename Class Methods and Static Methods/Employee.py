@@ -18,6 +18,11 @@ class Employee:
     def set_raise_amount(cls, amount):
         cls.raise_amount = amount
 
+    @classmethod
+    def from_string(cls,record):
+        first, last, pay = record.split('-')
+        return cls(first, last, pay)
+
 
 emp1 = Employee('Rohit', 'Singh', 10000)
 emp2 = Employee('Jon', 'Snow', 10)
@@ -25,3 +30,14 @@ Employee.set_raise_amount(3.07)
 print("Raise amount: {}".format(emp1.raise_amount))
 emp1.set_raise_amount(2.05)
 print("Raise amount: {}".format(emp2.raise_amount))
+
+# Using class metgjod to create alternate constructor
+record = 'Bruce-Wayne-2000'
+first, last , pay = record.split('-')
+emp3 = Employee(first, last, pay)
+print(emp3.__dict__)
+
+# instead now we can use a class method
+emp5 = Employee.from_string('Lady-Gaga-90')
+print(emp5.__dict__)
+
